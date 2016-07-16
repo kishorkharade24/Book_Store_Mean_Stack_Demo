@@ -1,0 +1,73 @@
+<div class="row center-block">
+    <form ng-submit="updateBook()" ng-init="getBook()">
+        <div class="panel-group">
+            <div class="panel panel-info">
+                <div class="panel-heading text-center">
+                    <strong>EDIT BOOK</strong>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-12">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-3">
+                            <span>
+                                <strong>Title:</strong>
+                            </span>
+                        </div>
+                        <div class="col-md-6">
+                            <input class="form-control" type="text" ng-model="book.title" value="{{ book.title }}" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-12">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-3">
+                            <span>
+                                <strong>Author:</strong>
+                            </span>
+                        </div>
+                        <div class="col-md-6">
+                            <input class="form-control" type="text" ng-model="book.author" value="{{ book.author }}" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-12">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-3">
+                            <span>
+                                <strong>Category:</strong>
+                            </span>
+                        </div>
+                        <div class="col-md-6">
+                            <input class="form-control" type="text" ng-model="book.category" value="{{ book.category }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-12">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-3">
+                            <span>
+                                <strong>Description:</strong>
+                            </span>
+                        </div>
+                        <div class="col-md-6">
+                            <textarea class="form-control" type="text" ng-model="book.description" value="{{ book.description }}"></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-4 col-md-offset-5">
+                    <button type="submit" class="btn btn-success">Save</button>
+                    <a class="btn btn-danger" href="#/allBooks">Back</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

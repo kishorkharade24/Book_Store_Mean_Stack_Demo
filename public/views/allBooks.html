@@ -1,0 +1,60 @@
+<form class="form-inline">
+    
+    <div class="panel panel-info">
+      <div class="panel-heading">
+          <span class="glyphicon glyphicon-search"></span>
+          
+          <input type="text" placeholder="Search..." class="form-control" ng-model="search">
+          
+          <a class="btn btn-success btn-sm pull-right" href="#/addBookPage">Add New Book</a>
+        </div>
+    </div>
+</form>
+<div class="row">    
+    <div class="col-sm-6" ng-repeat="book in books | filter: search">
+        <div class="well well-sm">
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="img-rounded img-responsive well-image" src="../images/book_image.jpg"/>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Title : "</strong>{{ book.title }}"</p>
+                    <p><strong>Author : </strong>{{ book.author }}</p>
+                    <p><strong>Category : </strong>{{ book.category }}</p>
+                    
+                    <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#book-info" ng-click="showBookInfo( book )">Learn More</button>
+                    
+                    <a href="#/book/edit/{{ book._id }}" class="btn btn-primary btn-xs">Edit Book</a>
+                    <button class="btn btn-danger btn-xs" ng-click="deleteBook( book._id )" data-toggle="confirmation">Delete Book</button>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div><!-- All Books -->
+
+<div class="modal" id="book-info">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h2>{{ activeBook.title }}</h2>
+            </div>
+            <div class="modal-body">
+                <div class="col-xs-8 col-xs-offset-2">
+                    <img src="../images/top_image.jpg" class="image-rounded img-responsive">
+                </div>
+            </div>
+            <div class="row top-buffer">
+                <div class="col-md-6">
+                    <p><strong>Author : </strong>{{  activeBook.author }}</p>
+                    <p><strong>Category : </strong>{{  activeBook.category }}</p>
+                </div><br>
+                <div class="col-xs-12 top-buffer">
+                    <p>{{ activeBook.description}}</p>
+                    
+                    <button class="btn btn-sm btn-warning pull-right" data-dismiss="modal">Close</button>
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

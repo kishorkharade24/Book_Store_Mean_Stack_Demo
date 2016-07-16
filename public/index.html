@@ -1,0 +1,73 @@
+<html lang="en" ng-app="bookFacts">
+<head>
+    <title>Book App</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap css and my own css -->
+<!--    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>-->
+    <link rel="stylesheet" href="./css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <!-- Third party js -->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>-->
+    <script src="./js/Lib/angular.min.js"></script>
+    
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-route.js"></script>-->
+    <script src="./js/Lib/angular-route.js"></script>
+    
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+    <script src="./js/Lib/jquery.min.js"></script>
+    
+<!--    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+    <script src="./js/Lib/bootstrap.min.js"></script>
+    
+</head>
+<body>
+    <div class="bg">
+        <div class="jumbotron">
+          <div class="container text-center">
+            <h1>The Book Store</h1>
+<!--            <p>Search, Read & Learn</p>-->
+              <p><strong>“We live for books”</strong></p>
+          </div>
+        </div>
+    </div>
+    
+    <div ng-controller="bookCtrl">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li><a href="#/"><strong>Home</strong></a></li>
+                <li><a href="#/allBooks"><strong>Bookshelf</strong></a></li>
+                <li><a href="#/contactPage"><strong>Contact</strong></a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="col-md-12">
+            <div class="col-md-2">
+                <img class="left-img" src="./images/left_side1.jpg">
+            </div>
+            <div class="col-md-10 center-block" ng-view>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Our application scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/controller/bookCtrl.js"></script>
+    <script src="js/factories/dataService.js"></script>
+</body>
+</html>
